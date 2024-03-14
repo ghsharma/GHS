@@ -1,0 +1,373 @@
+@font-face {
+    font-family: head;
+    src: url(./311b7f2775e42105e53e.ttf);
+}
+
+@font-face {
+    font-family: tail;
+    src: url(./d77b39f40383b63d32e3.ttf);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: rgb(21, 21, 21);
+}
+
+h1 {
+    font-family: head;
+}
+
+#background {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%);
+    background-size: 400% 400%;
+    transition: background-position 2s ease-out;
+    overflow: hidden;
+    /* Ensure content overflow is hidden */
+}
+
+
+nav {
+    width: 100%;
+    padding: 1.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav button {
+    color: white;
+    font-family: head;
+}
+
+nav button:hover {
+    cursor: pointer;
+}
+
+#logo {
+    margin-left: 2%;
+    font-family: head;
+    border: none;
+    font-size: 3rem;
+    background-color: transparent;
+}
+
+#nav-btns {
+
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    margin: 5px;
+    padding: 5px;
+}
+
+#freelance {
+    margin-right: 1.2%;
+    border-radius: 20px;
+    font-size: .8rem;
+    padding: 0 10px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: transparent;
+}
+
+#atPage {
+    padding: 5% 2%;
+    margin-left: 1.8%;
+    font-size: 1rem;
+    font-family: head;
+    font-weight: lighter;
+}
+
+#heroHead {
+    margin-top: -8rem;
+    margin-left: -5rem;
+}
+
+#heroHead h1 {
+    font-family: tail;
+    margin-bottom: -3.8rem;
+    text-align: center;
+    font-size: 6rem;
+    font-weight: lighter;
+    gap: 0;
+}
+
+#heroHead h1 span {
+    margin-left: -13rem;
+}
+
+#heroHead p {
+    font-size: 1rem;
+    font-family: tail;
+    margin-top: 2rem;
+    text-align: center;
+    margin-left: 10rem;
+}
+
+#heroHead p span {
+    margin-left: 5.4rem;
+}
+
+#right-img {
+    height: 45vh;
+    border-radius: 20px;
+    position: absolute;
+    top: 13%;
+    right: 20%;
+    z-index: 0;
+}
+
+#downbox {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#down {
+    font-size: 2rem;
+    border: 1px solid white;
+    min-width: 7vw;
+    padding: 20px;
+    margin-top: 4%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+#arrow {
+    text-align: center;
+    font-size: bolder;
+}
+
+
+#line {
+    width: 90%;
+    height: 1px;
+    margin: 0 auto;
+    margin-top: 7%;
+    background-color: rgb(255, 255, 255);
+}
+
+#pagetop {
+    /* width: 90%; */
+    font-family: tail;
+    font-size: .8rem;
+    font-weight: lighter;
+    padding: 20px;
+    margin: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#page2btn button {
+    font-weight: lighter;
+    font-size: .6rem;
+    padding: 5px;
+    color: white;
+    border: none;
+    background-color: transparent;
+}
+
+#page2-main {
+    margin-top: 12vh;
+    display: flex;
+    align-items: top;
+    padding: 0 5%;
+}
+
+#intro {
+    margin-top: 20px;
+    font-family: tail;
+    font-size: .8rem;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+#dp img {
+    height: 80vh;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+#learnbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#learncircle {
+    width: 25vh;
+    font-family: tail;
+    text-transform: uppercase;
+    font-size: 3rem;
+    border: 1px solid white;
+    padding: 0px;
+    align-items: center;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+}
+
+#learntext {
+    padding: 10px;
+    font-size: .7rem;
+    text-align: center;
+    font-size: bolder;
+    font-family: tail;
+}
+
+/* #learntext span {
+    margin-left: 10px;
+} */
+
+#dp {
+    position: relative;
+}
+
+.marquee {
+    margin-bottom: 20%;
+    position: absolute;
+    top: 77%;
+    left: -50%;
+    /* Start from the left edge */
+    transform: translateY(-50%);
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 1;
+    /* Ensure marquee overlays on top of image */
+    background: transparent;
+    /* Ensure marquee has no background */
+}
+
+.marquee span {
+    font-family: tail;
+    font-size: 9rem;
+    display: inline-block;
+    animation: marquee 70s linear infinite;
+}
+
+@keyframes marquee {
+    100% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#page3-main {
+    margin: 40px;
+    padding: 20px;
+}
+
+
+/* 
+#page3-main p {
+    font-weight: lighter;
+}
+
+
+#page3-main p span {
+    text-transform: uppercase;
+    text-decoration: solid;
+    font-size: 2.2rem;
+    color: transparent;
+    -webkit-text-stroke: .18px white;
+    position: relative;
+}
+
+#page3-main p span::before {
+    content: attr(data-content);
+    Use the content attribute
+position: absolute;
+overflow: hidden;
+width: 0;
+height: 90%;
+color: white;
+transition: .4s ease-in-out;
+Adjusted transition property
+}
+
+#page3-main p span:hover::before {
+    width: 100%;
+    filter: drop-shadow(0 0 60px white);
+}
+
+*/
+
+#page3-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#page3-top p {
+
+    /* justify-content: end; */
+    font-family: tail;
+    text-align: end;
+    font-size: 1.8rem;
+}
+
+#page3-top p #last {
+    margin-left: -20%;
+    text-align: left;
+}
+
+#last {
+    text-align: left;
+}
+
+#page3-elements {
+    margin-top: -5%;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#page3-elements .box {
+    height: 50%;
+    width: 33%;
+    background-color: rgb(25, 25, 25);
+    position: relative;
+    border-radius: 30px;
+}
+
+#page3-elements .box img {
+    border-radius: 30px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all linear .7s;
+}
+
+#page3-elements .box:hover img {
+    opacity: 0;
+}
+
+
+#page3-elements .box video {
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
