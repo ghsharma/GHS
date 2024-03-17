@@ -39,7 +39,7 @@ body {
     height: 100%;
     width: 100%;
     color: white;
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(37, 37, 37);
 }
 
 h1 {
@@ -47,8 +47,8 @@ h1 {
 }
 
 #background {
-    z-index: -1;
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%);
+    z-index: -10;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
     background-size: 400% 400%;
     transition: background-position 2s ease-out;
     /* overflow: hidden; */
@@ -184,7 +184,7 @@ nav button:hover {
     margin-left: -10rem;
 }
 
-#heroHead p {
+#heroPara {
     font-size: 1rem;
     font-family: tail;
     margin-top: 2rem;
@@ -192,10 +192,7 @@ nav button:hover {
     margin-left: 10rem;
 }
 
-/* 
-#heroHead p span {
-    margin-left: 5.4rem;
-} */
+
 
 #right-img {
     height: 45vh;
@@ -207,7 +204,7 @@ nav button:hover {
 }
 
 #downbox {
-    margin-bottom: 10px;
+    margin-bottom: 1%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -229,7 +226,7 @@ nav button:hover {
 }
 
 
-#line {
+.line {
     width: 90%;
     height: 1px;
     margin: 0 auto;
@@ -244,6 +241,7 @@ nav button:hover {
     font-weight: lighter;
     padding: 20px;
     margin: 0 40px;
+    margin-bottom: -5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -315,8 +313,44 @@ nav button:hover {
     aspect-ratio: 1/1;
     border-radius: 50%;
     display: flex;
-
+    position: relative;
+    overflow: hidden;
+    /* Added position relative */
 }
+
+#learncircle::after {
+    background-color: rgb(255, 255, 255);
+    border-radius: 3rem;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-100%, 0) rotate(10deg);
+    transform-origin: top left;
+    transition: transform 0.2s ease;
+    /* Adjusted transition property */
+    will-change: transform;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#learncircle:hover::after {
+    transform: translate(0, 0);
+    overflow: hidden;
+}
+
+#learncircle:hover {
+    border: 2px solid transparent;
+    color: #000000;
+    transform: scale(1.05);
+    will-change: transform;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 
 #learntext {
     padding: 10px;
@@ -326,8 +360,9 @@ nav button:hover {
     font-family: tail;
 }
 
-/* #learntext span {
-    margin-left: 10px;
+/* 
+#learntext:hover {
+    font-size: 1rem;
 } */
 
 #dp {
@@ -335,25 +370,21 @@ nav button:hover {
 }
 
 .marquee {
-    margin-bottom: 20%;
+    margin-bottom: 30%;
     position: absolute;
-    top: 77%;
-    left: -50%;
-    /* Start from the left edge */
+    top: 85%;
+    left: -10%;
     transform: translateY(-50%);
     white-space: nowrap;
-    /* overflow: hidden; */
-    z-index: 1;
-    /* Ensure marquee overlays on top of image */
+    z-index: 2;
     background: transparent;
-    /* Ensure marquee has no background */
 }
 
 .marquee span {
     font-family: tail;
     font-size: 9rem;
     display: inline-block;
-    animation: marquee 50s linear infinite;
+    animation: marquee 60s linear infinite;
 }
 
 @keyframes marquee {
@@ -372,13 +403,16 @@ nav button:hover {
 }
 
 
-/* 
-#page3-main p {
+
+#page3-main h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: tail;
     font-weight: lighter;
 }
 
 
-#page3-main p span {
+#page3-main h2 span {
     text-transform: uppercase;
     text-decoration: solid;
     font-size: 2.2rem;
@@ -387,24 +421,86 @@ nav button:hover {
     position: relative;
 }
 
-#page3-main p span::before {
+#page3-main h2 span::before {
     content: attr(data-content);
-    Use the content attribute
-position: absolute;
-overflow: hidden;
-width: 0;
-height: 90%;
-color: white;
-transition: .4s ease-in-out;
-Adjusted transition property
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 90%;
+    color: white;
+    transition: .4s ease-in-out;
 }
 
-#page3-main p span:hover::before {
+#page3-main h2 span:hover::before {
     width: 100%;
     filter: drop-shadow(0 0 60px white);
 }
 
-*/
+
+
+#projectbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#projectcircle {
+    width: 25vh;
+    font-family: tail;
+    text-transform: uppercase;
+    font-size: 3rem;
+    border: 1px solid white;
+    padding: 0px;
+    align-items: center;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    /* Added position relative */
+}
+
+#projectcircle::after {
+    background-color: rgb(255, 255, 255);
+    border-radius: 3rem;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-100%, 0) rotate(10deg);
+    transform-origin: top left;
+    transition: transform 0.2s ease;
+    /* Adjusted transition property */
+    will-change: transform;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#projectcircle:hover::after {
+    transform: translate(0, 0);
+    overflow: hidden;
+}
+
+#projectcircle:hover {
+    border: 2px solid transparent;
+    color: #000000;
+    transform: scale(1.05);
+    will-change: transform;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+#projecttext {
+    padding: 10px;
+    font-size: .7rem;
+    text-align: center;
+    font-size: bolder;
+    font-family: tail;
+}
 
 #page3-top {
     width: 100%;
@@ -469,12 +565,26 @@ Adjusted transition property
     object-position: center;
 }
 
+
+#page3-elements .box a {
+    text-decoration: none;
+    color: white;
+    cursor: none;
+}
+
+#page3-elements .box a:hover {
+    text-decoration: none;
+    color: rgb(172, 170, 170);
+    cursor: none;
+}
+
 #page3-elements h2 {
     font-family: tail;
 }
 
 #page4-content {
-    margin-top: -5%;
+    /* margin-top: -5%; */
+    margin-bottom: -5%;
     min-height: 100vh;
     width: 100%;
     padding: 5%;
@@ -499,48 +609,101 @@ Adjusted transition property
 }
 
 .text-div {
-    height: 110px;
+    height: 120px;
     overflow: hidden;
     position: relative;
 }
 
 .elem img {
+    z-index: -1;
     position: absolute;
-    height: 15vh;
+    height: 25vh;
     opacity: 0;
     transition: all ease-out 0.6s;
     transform: translateY(20%) rotate(2deg);
 }
 
 .elem img:nth-child(1) {
-    height: 17vh;
-    left: 5%;
+    left: 3%;
 }
 
 .elem img:nth-child(2) {
-    height: 17vh;
-    left: 17%;
+    left: 3%;
+    top: 50%;
 }
 
-.elem img:nth-child(3) {
-    height: 17vh;
-    left: 27%;
+.elem img:nth-child(4) {
+    right: 3%;
 }
 
 .elem img:nth-child(5) {
-    right: 27%;
+    right: 3%;
+    top: 50%;
 }
 
-.elem img:nth-child(6) {
-    right: 17%;
-}
-
-.elem img:nth-child(7) {
-    right: 5%;
-}
 
 
 .elem:hover img {
     opacity: 1;
     transform: translate(0%) rotate(0deg);
+}
+
+.eyes {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    z-index: 2;
+}
+
+#page5-content {
+    margin-top: 5%;
+    padding: 20px;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1;
+}
+
+#socials {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.eye {
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    display: inline-block;
+    margin: 20px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    animation: blink 3s infinite;
+}
+
+@-webkit-keyframes blink {
+
+    0%,
+    100% {
+        transform: scale(1, 0.05);
+    }
+
+    5%,
+    95% {
+        transform: scale(1, 1);
+    }
+}
+
+.ball {
+    width: 40px;
+    height: 40px;
+    background: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, 50%);
+    border-radius: 50%;
+    border: 10px solid #6d6875;
 }

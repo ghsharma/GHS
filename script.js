@@ -1,53 +1,191 @@
 
-
-
 function implementingGSAP() {
-
     gsap.registerPlugin(ScrollTrigger);
 
-
-    // --- SETUP START ---
-    // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector("#main"),
-        smooth: true
+        smooth: true,
+
+        // for tablet smooth
+        tablet: { smooth: true },
+
+        // for mobile
+        smartphone: { smooth: true }
     });
-    // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
     locoScroll.on("scroll", ScrollTrigger.update);
 
-    // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
     ScrollTrigger.scrollerProxy("#main", {
         scrollTop(value) {
-            return arguments.length ? locoScroll.scrollTo(value, { duration: 0, disableLerp: true }) : locoScroll.scroll.instance.scroll.y;
-        }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-        getBoundingClientRect() {
-            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+            return arguments.length
+                ? locoScroll.scrollTo(value, 0, 0)
+                : locoScroll.scroll.instance.scroll.y;
         },
-        // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-        pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
+        getBoundingClientRect() {
+            return {
+                top: 0,
+                left: 0,
+                width: window.innerWidth,
+                height: window.innerHeight
+            };
+        }
+
+        // follwoing line is not required to work pinning on touch screen
+
+        /* pinType: document.querySelector(".smooth-scroll").style.transform
+          ? "transform"
+          : "fixed"*/
     });
 
-    // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+
+
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-    ScrollTrigger.defaults({ scroller: "#main" });
-    // --- SETUP END ---
 
-
-    // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
     ScrollTrigger.refresh();
+
 }
 implementingGSAP();
 
-// gsap.to("#page1 h1", {
-//     x: -100,
-//     scrollTrigger: {
-//         trigger: "#page1 h1",
-//         scroller: "#main",
-//         start: "top 27%",
-//         end: "bottom 0",
-//         scrub: 1 // Adjust scrubbing speed if needed
-//     }
-// });
+
+function page1() {
+    var tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#heroPara p",
+            scroller: "#main",
+            start: "top 100%",
+            end: "top 1%",
+            duration: .1,
+            scrub: 1// Adjust scrubbing speed if needed
+        }
+    })
+    tl.to("#p1", {
+        x: -100,
+    }, "anim")
+
+    tl.to("#p2", {
+        x: 100,
+    }, "anim")
+
+}
+page1()
+
+function page2() {
+
+    var page2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#pageintro",
+            scroller: "#main",
+            start: "top 60%",
+            end: "top 0%",
+            scrub: 1 // Adjust scrubbing speed if needed
+        }
+    })
+
+    page2.from("#intropara span", {
+        y: -100,
+        duration: 5,
+        opacity: 0,
+        stagger: 4,
+        ease: "power1.out",
+
+    });
+
+    page2.from("#learncircle", {
+        scale: 0,
+        opacity: 0.5,
+        duration: 5, // Adjust duration to slow down the animation
+    });
+
+    page2.to("#learncircle", {
+        opacity: 1,
+        duration: 5, // Adjust duration to match the previous animation
+        ease: "power1.out"
+    });
+
+
+    page2.from("#line1", {
+        x: "-120%",
+        scrollTrigger: {
+            trigger: "#pageintro",
+            scroller: "#main",
+            start: "top 50%",
+            end: "top 20%",
+            scrub: 1 // Adjust scrubbing speed if needed
+        }
+    })
+}
+page2()
+
+function page3() {
+
+    var page3 = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#page3-head span",
+            scroller: "#main",
+            duration: 5,
+            stagger: 2,
+            start: "top 60%",
+            end: "top 30%",
+            scrub: 1 // Adjust scrubbing speed if needed
+        }
+    })
+
+    page3.from("#page3-head span", {
+        y: -100,
+        duration: 5,
+        opacity: 0,
+        stagger: 1,
+        ease: "power1.out",
+
+    });
+
+    page3.from("#page3-main h2", {
+        y: -100,
+        duration: 5,
+        opacity: 0,
+        stagger: 1,
+        ease: "power1.out",
+    });
+
+    page3.from("#projectcircle", {
+        scale: 0,
+        opacity: 0.5,
+        duration: 5, // Adjust duration to slow down the animation
+    });
+
+    page3.to("#projectcircle", {
+        opacity: 1,
+        duration: 5, // Adjust duration to match the previous animation
+        ease: "power1.out"
+    });
+
+
+    page3.from("#line2", {
+        x: "-120%",
+        scrollTrigger: {
+            trigger: "#page3-head span",
+            scroller: "#main",
+            start: "top 70%",
+            end: "top 40%",
+            scrub: 1 // Adjust scrubbing speed if needed
+        }
+    })
+
+    page3.from("#line3", {
+        x: "-120%",
+        scrollTrigger: {
+            trigger: "#page4",
+            scroller: "#main",
+            start: "top 70%",
+            end: "top 40%",
+            scrub: 1 // Adjust scrubbing speed if needed
+        }
+    })
+
+
+}
+page3()
+
+
 
 function animationsGSAP() {
 
@@ -57,12 +195,13 @@ function animationsGSAP() {
         duration: 1,
         opacity: 0,
         stagger: 0.2,
-        ease: "power2.out"
+        ease: "power2.out",
+
     })
 
     animate.from("#down,#arrow", {
         scale: 0,
-        opacity: 0
+        opacity: 0.5,
     })
 
     animate.to("#down", {
@@ -81,7 +220,9 @@ function cursorEffect() {
     var main = document.querySelector("#main");
     var btn = document.querySelector("#freelance");
     var dp = document.querySelector("#dp-img");
+    var circle = document.querySelector("#learncircle , #projectcircle");
     var cursor = document.querySelector("#cursor");
+    var elem = document.querySelector("#page3-elements .box")
 
     document.addEventListener("mousemove", function (event) {
         gsap.to(cursor, {
@@ -117,10 +258,52 @@ function cursorEffect() {
         });
     });
 
+    circle.addEventListener("mouseenter", function () {
+        gsap.to(cursor, {
+            scale: 0,
+            opacity: 0
+        });
+    });
+
+    circle.addEventListener("mouseleave", function () {
+        gsap.to(cursor, {
+            scale: 1,
+            opacity: 1
+        });
+    });
+
+    // elem.addEventListener("mouseenter", function () {
+    //     gsap.to(cursor, {
+    //         scale: 10,
+    //         opacity: 1
+    //     });
+    // });
+
+    // elem.addEventListener("mouseleave", function () {
+    //     gsap.to(cursor, {
+    //         scale: 1,
+    //         opacity: 1
+    //     });
+    // });
+
+
+
 
 
 }
 cursorEffect();
+// Select all video and image elements
+var mediaElements = document.querySelectorAll("video, img");
+
+// Add event listener for mousemove on the document
+document.addEventListener("mousemove", function (event) {
+    // Update cursor position
+    gsap.to(cursor, {
+        x: event.clientX,
+        y: event.clientY
+    });
+});
+
 
 
 function backgroundEffect() {
@@ -135,3 +318,20 @@ function backgroundEffect() {
 }
 backgroundEffect();
 
+
+let Ball = document.getElementsByClassName("ball");
+document.onmousemove = function () {
+    //get innerWidth,innerheight for browser
+
+    //get horizontal coordinate of the onmousemove
+    let x = (event.clientX * 100) / window.innerWidth + "%";
+
+    //get the verticle coordinate of onmousemove
+    let y = (event.clientY * 100) / window.innerHeight + "%";
+
+    for (let i = 0; i < 2; i++) {
+        Ball[i].style.left = x;
+        Ball[i].style.top = y;
+        Ball[i].style.transform = "translate(-" + x + ", -" + y + ")";
+    }
+};
