@@ -8,6 +8,10 @@
     src: url(./d77b39f40383b63d32e3.ttf);
 }
 
+#main {
+    overflow: hidden;
+}
+
 
 * {
     margin: 0;
@@ -39,7 +43,7 @@ body {
     height: 100%;
     width: 100%;
     color: white;
-    background-color: rgb(37, 37, 37);
+    background-color: rgb(27, 27, 27);
 }
 
 h1 {
@@ -578,7 +582,8 @@ nav button:hover {
     cursor: none;
 }
 
-#page3-elements h2 {
+#extrainfo h2 {
+    /* margin-top: 50vh; */
     font-family: tail;
 }
 
@@ -615,7 +620,7 @@ nav button:hover {
 }
 
 .elem img {
-    z-index: -1;
+    /* z-index: -1; */
     position: absolute;
     height: 25vh;
     opacity: 0;
@@ -625,20 +630,22 @@ nav button:hover {
 
 .elem img:nth-child(1) {
     left: 3%;
+    top: 20%;
 }
 
 .elem img:nth-child(2) {
     left: 3%;
-    top: 50%;
+    top: 60%;
 }
 
 .elem img:nth-child(4) {
     right: 3%;
+    top: 30%;
 }
 
 .elem img:nth-child(5) {
     right: 3%;
-    top: 50%;
+    top: 60%;
 }
 
 
@@ -648,34 +655,85 @@ nav button:hover {
     transform: translate(0%) rotate(0deg);
 }
 
-.eyes {
-    width: 100%;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    z-index: 2;
+#page5 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #page5-content {
-    margin-top: 5%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    overflow-y: auto;
+}
+
+#connectbox {
+    border-radius: 30px;
+    background-color: rgba(22, 21, 21, 0.718);
+    width: 60%;
+    color: rgb(255, 255, 255);
+    margin-top: 10%;
+    padding: 50px;
     position: relative;
-    z-index: 1;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid white;
+}
+
+#connectbox h2 {
+    font-family: head;
+    font-size: 1rem;
+}
+
+#connectbox h1 {
+    font-size: 3rem;
 }
 
 #socials {
-    margin-bottom: 20px;
+    width: 90%;
+    margin-top: 0px;
+    /* Add margin to create space between socials and eyes */
     display: flex;
     justify-content: space-between;
 }
 
+.social-div:hover h1 {
+    transform: translateY(-100%);
+    cursor: none;
+}
+
+.social-div h1 {
+    font-size: 2rem;
+    transition: all ease-out 0.3s;
+}
+
+.social-div {
+    margin-top: 2%;
+    margin-bottom: 3%;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.social-div a {
+    text-decoration: none;
+    color: white;
+}
+
+.eyes {
+    margin-top: 20px;
+    /* Add margin to create space between eyes and socials */
+    display: flex;
+    justify-content: center;
+}
 
 .eye {
     width: 150px;
     height: 150px;
     background: #fff;
-    display: inline-block;
     margin: 20px;
     border-radius: 50%;
     position: relative;
@@ -683,7 +741,19 @@ nav button:hover {
     animation: blink 3s infinite;
 }
 
-@-webkit-keyframes blink {
+.ball {
+    width: 40px;
+    height: 40px;
+    background: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 10px solid #6d6875;
+}
+
+@keyframes blink {
 
     0%,
     100% {
@@ -696,14 +766,363 @@ nav button:hover {
     }
 }
 
-.ball {
-    width: 40px;
-    height: 40px;
-    background: #000;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(50%, 50%);
-    border-radius: 50%;
-    border: 10px solid #6d6875;
+/* For screens smaller than 768px (typical iPad portrait mode) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* Adjust styles for iPads */
+
+    #main {
+        overflow: hidden;
+    }
+
+    #freelance {
+        margin-right: 1.2%;
+        border-radius: 20px;
+        font-size: .8rem;
+        padding: 0 10px;
+        border: 1px solid rgb(255, 255, 255);
+        background-color: transparent;
+    }
+
+    #atPage {
+        margin-top: 5vh;
+    }
+
+    #heroHead {
+        margin-top: 10vh;
+    }
+
+    #heroPara {
+        margin-left: 0vw;
+    }
+
+    #down {
+        width: 20vw;
+        margin-bottom: 10vh;
+    }
+
+    #pagetop {
+        font-size: 1rem;
+    }
+
+    #page2-main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #intropara {
+        font-size: 1.2rem;
+    }
+
+    #dp img {
+        height: 45vh;
+        border-radius: 30px;
+        padding: 20px;
+    }
+
+    #learncircle {
+        /* height: 10vh; */
+        width: 10vh;
+    }
+
+    #projectcircle {
+        width: 15vh;
+    }
+
+    #page3-top {
+        margin-top:
+            5vh;
+    }
+
+    #page3-head p {
+        font-size: 1.5rem;
+    }
+
+    #page3-elements {
+        margin-top: 5%;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #page3-elements .box {
+        height: 50%;
+        width: 100%;
+        background-color: rgb(25, 25, 25);
+        position: relative;
+        border-radius: 30px;
+        margin-bottom: 5vh;
+    }
+
+
+    #page4-content {
+        /* margin-top: -5%; */
+        margin-bottom: -5%;
+        min-height: 100vh;
+        width: 100%;
+        padding: 5%;
+        position: relative;
+        padding: 100px;
+    }
+
+    #extrainfo h2 {
+        margin-top: 50vh;
+        font-family: tail;
+    }
+
+
+    .elem {
+        /* background-color: salmon; */
+        margin-top: 10vh;
+        font-family: tail;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #page4-content {
+        margin-bottom: -10vh;
+    }
+
+    .elem:hover h1 {
+        transform: translateY(-100%);
+    }
+
+    .elem h1 {
+        font-size: 5rem;
+        transition: all ease-out 0.3s;
+    }
+
+    .text-div {
+        height: 120px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .elem img {
+        display: flex;
+        flex-direction: column;
+        z-index: -1;
+        position: absolute;
+        height: 20vh;
+        opacity: 0;
+        transition: all ease-out 0.6s;
+        transform: translateY(20%) rotate(2deg);
+    }
+
+
+    .elem img:nth-child(1) {
+        top: 10%;
+        left: 3%;
+    }
+
+    .elem img:nth-child(2) {
+        left: 3%;
+        top: 40%;
+    }
+
+    .elem img:nth-child(4) {
+        top: 60%;
+        right: 3%;
+    }
+
+    .elem img:nth-child(5) {
+        right: 3%;
+        top: 20%;
+    }
+
+
+
+    .elem:hover img {
+        opacity: 1;
+        transform: translate(0%) rotate(0deg);
+    }
+
+    #page5-content {
+        margin-top: -90vh;
+        margin-bottom: -60vh;
+    }
+
+
+}
+
+/* For screens smaller than 600px (typical phone screens) */
+@media only screen and (max-width: 600px) {
+
+    #main {
+        overflow: hidden;
+    }
+
+    #freelance {
+        margin-right: 1.2%;
+        border-radius: 20px;
+        font-size: .8rem;
+        padding: 0 10px;
+        border: 1px solid rgb(255, 255, 255);
+        background-color: transparent;
+    }
+
+    #atPage {
+        margin-top: 5vh;
+    }
+
+    #heroHead {
+        margin-top: 10vh;
+    }
+
+    #heroPara {
+        margin-left: 0vw;
+    }
+
+    #down {
+        width: 20vw;
+        margin-bottom: 10vh;
+    }
+
+    #pagetop {
+        font-size: 1rem;
+    }
+
+    #page2-main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #intropara {
+        font-size: 1.2rem;
+    }
+
+    #dp img {
+        height: 45vh;
+        border-radius: 30px;
+        padding: 20px;
+    }
+
+    #learncircle {
+        /* height: 10vh; */
+        width: 10vh;
+    }
+
+    #projectcircle {
+        width: 15vh;
+    }
+
+    #page3-top {
+        margin-top:
+            5vh;
+    }
+
+    #page3-head p {
+        font-size: 1.5rem;
+    }
+
+    #page3-elements {
+        margin-top: 5%;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #page3-elements .box {
+        height: 50%;
+        width: 100%;
+        background-color: rgb(25, 25, 25);
+        position: relative;
+        border-radius: 30px;
+        margin-bottom: 5vh;
+    }
+
+
+    #page4-content {
+        /* margin-top: -5%; */
+        margin-bottom: -5%;
+        min-height: 100vh;
+        width: 100%;
+        padding: 5%;
+        position: relative;
+        padding: 100px;
+    }
+
+    #extrainfo h2 {
+        margin-top: 50vh;
+        font-family: tail;
+    }
+
+
+    .elem {
+        /* background-color: salmon; */
+        margin-top: 10vh;
+        font-family: tail;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #page4-content {
+        margin-bottom: -10vh;
+    }
+
+    .elem:hover h1 {
+        transform: translateY(-100%);
+    }
+
+    .elem h1 {
+        font-size: 5rem;
+        transition: all ease-out 0.3s;
+    }
+
+    .text-div {
+        height: 120px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .elem img {
+        display: flex;
+        flex-direction: column;
+        z-index: -1;
+        position: absolute;
+        height: 20vh;
+        opacity: 0;
+        transition: all ease-out 0.6s;
+        transform: translateY(20%) rotate(2deg);
+    }
+
+
+    .elem img:nth-child(1) {
+        top: 10%;
+        left: 3%;
+    }
+
+    .elem img:nth-child(2) {
+        left: 3%;
+        top: 40%;
+    }
+
+    .elem img:nth-child(4) {
+        top: 60%;
+        right: 3%;
+    }
+
+    .elem img:nth-child(5) {
+        right: 3%;
+        top: 20%;
+    }
+
+
+
+    .elem:hover img {
+        opacity: 1;
+        transform: translate(0%) rotate(0deg);
+    }
+
+    #page5-content {
+        margin-top: -90vh;
+        margin-bottom: -60vh;
+    }
+
 }

@@ -121,7 +121,7 @@ function page3() {
         scrollTrigger: {
             trigger: "#page3-head span",
             scroller: "#main",
-            duration: 5,
+            duration: 10,
             stagger: 2,
             start: "top 60%",
             end: "top 30%",
@@ -133,8 +133,7 @@ function page3() {
         y: -100,
         duration: 5,
         opacity: 0,
-        stagger: 1,
-        ease: "power1.out",
+        stagger: 5,
 
     });
 
@@ -181,9 +180,55 @@ function page3() {
         }
     })
 
+    page3.from("#line4", {
+        x: "-120%",
+        scrollTrigger: {
+            trigger: "#page5",
+            scroller: "#main",
+            start: "top 70%",
+            end: "top 40%",
+            scrub: 1 // Adjust scrubbing speed if needed
+        }
+    })
+
+
 
 }
 page3()
+
+function page5() {
+    var page5 = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#page5-content",
+            scroller: "#main",
+            start: "top 10%",
+            end: "top 0%",
+            scrub: 3
+        }
+    });
+
+    page5.to("#connectbox", {
+        width: "80%",
+    })
+
+    page5.from(".eyes", {
+        scale: 0,
+        opacity: 0.5,
+        duration: 5, // Adjust duration to slow down the animation
+    });
+
+    page5.to(".eyes", {
+        opacity: 1,
+        duration: 5, // Adjust duration to match the previous animation
+        ease: "power1.out"
+    });
+
+
+}
+page5()
+
+
+
 
 
 
