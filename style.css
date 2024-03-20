@@ -9,7 +9,7 @@
 }
 
 #main {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 
@@ -43,7 +43,7 @@ body {
     height: 100%;
     width: 100%;
     color: white;
-    background-color: rgb(27, 27, 27);
+    background-color: rgb(51, 51, 51);
 }
 
 h1 {
@@ -58,6 +58,12 @@ h1 {
     /* overflow: hidden; */
 }
 
+#navigate {
+    display: flex;
+    align-items: center;
+    margin-left: 25%;
+    /* justify-content: space-between; */
+}
 
 nav {
     width: 100%;
@@ -74,11 +80,12 @@ nav button {
 
 #freelance {
     margin-right: 1.2%;
+    min-width: 20vw;
     border-radius: 20px;
     height: 5vh;
-    font-size: 1rem;
+    font-size: .8rem;
     padding: 0 10px;
-    border: 1px solid rgb(255, 255, 255);
+    border: .5px solid rgb(255, 255, 255);
     background-color: transparent;
     border: 2px solid currentColor;
     border-radius: 3rem;
@@ -110,7 +117,7 @@ nav button {
 }
 
 #freelance:hover {
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     color: #000000;
     transform: scale(1.05);
     will-change: transform;
@@ -129,7 +136,7 @@ nav button:hover {
     background-color: transparent;
 }
 
-#nav-btns {
+.nav-btns {
 
     border: none;
     background-color: transparent;
@@ -138,7 +145,7 @@ nav button:hover {
     padding: 5px;
 }
 
-#nav-btns::after {
+.nav-btns::after {
     content: " ";
     position: absolute;
     background-color: white;
@@ -150,17 +157,28 @@ nav button:hover {
     transition: .3s;
 }
 
-#nav-btns:hover::after {
+.nav-btns:hover::after {
     width: 100%;
 }
 
-#freelance {
-    margin-right: 1.2%;
-    border-radius: 20px;
-    font-size: .8rem;
-    padding: 0 10px;
-    border: 1px solid rgb(255, 255, 255);
-    background-color: transparent;
+#nav-allbtns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
 }
 
 #atPage {
@@ -951,8 +969,47 @@ nav button:hover {
 /* For screens smaller than 600px (typical phone screens) */
 @media only screen and (max-width: 600px) {
 
+    #logo {
+        font-size: 2.5rem;
+    }
+
     #main {
         overflow: hidden;
+    }
+
+    .hamburger {
+        display: block;
+        margin-right: 10px;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+
+    }
+
+
+    .nav-allbtns {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: transparent;
+        /* Change background color to transparent */
+        width: 100%;
+        text-align: end;
+        transition: 0.3s;
+    }
+
+    .nav-allbtns.active {
+        left: 0;
+        background-color: white;
+        /* Set background color when active */
     }
 
     #freelance {
