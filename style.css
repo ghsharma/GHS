@@ -13,6 +13,41 @@
 }
 
 
+#loader {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    gap: 10px;
+}
+
+#counter {
+    font-family: tail;
+    font-weight: bold;
+    position: fixed;
+    padding: 20px;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: black;
+    font-size: 5rem;
+}
+
+#loader h1 {
+    font-size: 6vw;
+    font-weight: lighter;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -39,11 +74,12 @@ button {
 
 html,
 body {
+    scrollbar-width: none;
     cursor: none;
     height: 100%;
     width: 100%;
     color: white;
-    background-color: rgb(51, 51, 51);
+    background-color: rgb(17, 17, 17);
 }
 
 h1 {
@@ -298,7 +334,8 @@ nav button:hover {
 }
 
 #page2-main {
-    margin-top: 12vh;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
     display: flex;
     align-items: top;
     padding: 0 5%;
@@ -392,9 +429,9 @@ nav button:hover {
 }
 
 .marquee {
-    margin-bottom: 30%;
+    /* margin-bottom: 50%; */
     position: absolute;
-    top: 85%;
+    top: 90%;
     left: -10%;
     transform: translateY(-50%);
     white-space: nowrap;
@@ -418,6 +455,76 @@ nav button:hover {
         transform: translateX(-100%);
     }
 }
+
+#sliderpage {
+    margin-top: -30vh;
+    margin-bottom: -30vh;
+    gap: 10vh;
+    /* position: relative; */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 150vh;
+}
+
+.cards {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80vh;
+    background-position: center;
+    background-size: cover;
+}
+
+#card-one {
+    top: 130%;
+    background-image: url("/media/ONE.png");
+}
+
+#card-two {
+    top: 230%;
+    background-image: url("/media/two.png");
+}
+
+#card-three {
+    top: 250%;
+    background-image: url("/media/three.png");
+}
+
+.text {
+    position: absolute;
+    width: 100%;
+    top: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-img {
+    width: 5vw;
+    height: 5vw;
+    /* background-color: #fff; */
+    background-image: url(Blue\ Modern\ G\ Letter\ Technology\ Logo\ Design\ \(4\).png);
+    background-size: cover;
+    background-position: center;
+}
+
+.text h1 {
+    font-size: 3vw;
+    color: #fff;
+    text-align: center;
+}
+
+.text p {
+    font-size: 1vw;
+    color: rgb(126, 126, 126);
+    text-align: center;
+}
+
+/* ---------------------------------trial end-------------------- */
 
 #page3-main {
     margin: 40px;

@@ -54,7 +54,7 @@ function page1() {
             start: "top 100%",
             end: "top 1%",
             duration: .1,
-            scrub: 1// Adjust scrubbing speed if needed
+            scrub: 1
         }
     })
     tl.to("#p1", {
@@ -119,7 +119,7 @@ function page3() {
 
     var page3 = gsap.timeline({
         scrollTrigger: {
-            trigger: "#page3-head span",
+            trigger: "#page3",
             scroller: "#main",
             duration: 10,
             stagger: 2,
@@ -161,7 +161,7 @@ function page3() {
     page3.from("#line2", {
         x: "-120%",
         scrollTrigger: {
-            trigger: "#page3-head span",
+            trigger: "#page3",
             scroller: "#main",
             start: "top 70%",
             end: "top 40%",
@@ -174,8 +174,8 @@ function page3() {
         scrollTrigger: {
             trigger: "#page4",
             scroller: "#main",
-            start: "top 70%",
-            end: "top 40%",
+            start: "top 30%",
+            end: "top   100%",
             scrub: 1 // Adjust scrubbing speed if needed
         }
     })
@@ -240,6 +240,7 @@ function animationsGSAP() {
         duration: 1,
         opacity: 0,
         stagger: 0.2,
+        delay: 2,
         ease: "power2.out",
 
     })
@@ -393,3 +394,93 @@ document.querySelectorAll(".nav-btns").forEach(n => n.addEventListener("click", 
     hamburger.classList.remove("active");
     navmenu.classList.remove("active");
 }))
+
+
+var trans = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#sliderpage",
+        scroller: "#main",
+        start: "38% 50%",
+        end: "100% 50%",
+        scrub: 2,
+        pin: true
+    }
+});
+trans
+    .to(".text", {
+        top: "-7%",
+    }, 'a')
+    .to("#card-one", {
+        top: "35%",
+    }, 'a')
+    .to("#card-two", {
+        top: "130%"
+    }, 'a')
+    .to("#card-two", {
+        top: "42%"
+    }, 'b')
+    .to("#card-one", {
+        width: "65%",
+        height: "65vh"
+    }, 'b')
+    .to("#card-three", {
+        top: "130%"
+    }, 'b')
+    .to("#card-three", {
+        top: "50%"
+    }, 'c')
+    .to("#card-two", {
+        width: "70%",
+        height: "70vh"
+    }, 'c')
+
+
+var tl = gsap.timeline()
+tl.from("#loader h1", {
+    y: -40,
+    opacity: 0,
+    duration: .5,
+    stagger: 0.2,
+    delay: .3,
+})
+
+tl.to(".faders", {
+    opacity: 0.2,
+    y: -40,
+})
+
+tl.to("#loader", {
+    y: "-100%",
+    delay: .5,
+    display: "none"
+})
+
+tl.to("#counter", {
+    delay: 1.5,
+})
+
+
+function startLoader() {
+    let countElement = document.querySelector("#counter");
+    let currValue = 0;
+
+    function updateCounter() {
+        if (currValue === 100) {
+            return;
+        }
+
+        currValue += Math.floor(Math.random() * 10) + 1;
+
+        if (currValue > 100) {
+            currValue = 100;
+        }
+
+        countElement.textContent = `${currValue}%`;
+
+        let delay = Math.floor(Math.random() * 100) + 10;
+        setTimeout(updateCounter, delay);
+    }
+
+    updateCounter();
+}
+startLoader();
