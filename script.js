@@ -46,6 +46,8 @@ function implementingGSAP() {
 implementingGSAP();
 
 
+
+
 function page1() {
     var tl = gsap.timeline({
         scrollTrigger: {
@@ -129,22 +131,6 @@ function page3() {
         }
     })
 
-    page3.from("#page3-head span", {
-        y: -100,
-        duration: 5,
-        opacity: 0,
-        stagger: 5,
-
-    });
-
-    page3.from("#page3-main h2", {
-        y: -100,
-        duration: 5,
-        opacity: 0,
-        stagger: 1,
-        ease: "power1.out",
-    });
-
     page3.from("#projectcircle", {
         scale: 0,
         opacity: 0.5,
@@ -157,6 +143,15 @@ function page3() {
         ease: "power1.out"
     });
 
+
+    page3.from("h2 span", {
+        y: -100,
+        duration: 10,
+        opacity: 0,
+        stagger: 5,
+        ease: "power1.out",
+
+    });
 
     page3.from("#line2", {
         x: "-120%",
@@ -174,8 +169,8 @@ function page3() {
         scrollTrigger: {
             trigger: "#page4",
             scroller: "#main",
-            start: "top 30%",
-            end: "top   100%",
+            start: "top 90%",
+            end: "top   60%",
             scrub: 1 // Adjust scrubbing speed if needed
         }
     })
@@ -191,33 +186,40 @@ function page3() {
         }
     })
 
+    page3.from("#line5", {
+        x: "-120%",
+        scrollTrigger: {
+            trigger: "#page6",
+            scroller: "#main",
+            start: "top 70%",
+            end: "top 40%",
+            scrub: 1 // Adjust scrubbing speed if needed
+        }
+    })
+
 
 
 }
 page3()
 
-function page5() {
-    var page5 = gsap.timeline({
+function page6() {
+    var page6 = gsap.timeline({
         scrollTrigger: {
-            trigger: "#page5-content",
+            trigger: "#page6-content",
             scroller: "#main",
-            start: "top 10%",
+            start: "top 70%",
             end: "top 0%",
             scrub: 3
         }
     });
 
-    page5.to("#connectbox", {
-        width: "80%",
-    })
-
-    page5.from(".eyes", {
+    page6.from(".eyes", {
         scale: 0,
         opacity: 0.5,
         duration: 5, // Adjust duration to slow down the animation
     });
 
-    page5.to(".eyes", {
+    page6.to(".eyes", {
         opacity: 1,
         duration: 5, // Adjust duration to match the previous animation
         ease: "power1.out"
@@ -225,8 +227,26 @@ function page5() {
 
 
 }
-page5()
+page6()
 
+var box = document.querySelectorAll(".page5-container")
+box.forEach(function (elem) {
+    elem.addEventListener("mouseenter", function () {
+        var att = elem.getAttribute("data-image")
+        cursor.style.width = "450px"
+        cursor.style.height = "300px"
+        cursor.style.borderRadius = "0"
+        cursor.style.backgroundImage = `url(${att})`
+    })
+    elem.addEventListener("mouseleave", function () {
+        elem.style.backgroundColor = "transparent"
+        cursor.style.width = "10px"
+        cursor.style.height = "10px"
+        cursor.style.borderRadius = "50%"
+        cursor.style.backgroundImage = `none`
+    })
+
+})
 
 
 
@@ -268,7 +288,6 @@ function cursorEffect() {
     var dp = document.querySelector("#dp-img");
     var circle = document.querySelector("#learncircle , #projectcircle");
     var cursor = document.querySelector("#cursor");
-    var elem = document.querySelector("#page3-elements .box")
 
     document.addEventListener("mousemove", function (event) {
         gsap.to(cursor, {
@@ -318,37 +337,21 @@ function cursorEffect() {
         });
     });
 
-    // elem.addEventListener("mouseenter", function () {
-    //     gsap.to(cursor, {
-    //         scale: 10,
-    //         opacity: 1
-    //     });
-    // });
-
-    // elem.addEventListener("mouseleave", function () {
-    //     gsap.to(cursor, {
-    //         scale: 1,
-    //         opacity: 1
-    //     });
-    // });
-
-
-
 
 
 }
 cursorEffect();
-// Select all video and image elements
-var mediaElements = document.querySelectorAll("video, img");
+// // Select all video and image elements
+// var mediaElements = document.querySelectorAll("video, img");
 
-// Add event listener for mousemove on the document
-document.addEventListener("mousemove", function (event) {
-    // Update cursor position
-    gsap.to(cursor, {
-        x: event.clientX,
-        y: event.clientY
-    });
-});
+// // Add event listener for mousemove on the document
+// document.addEventListener("mousemove", function (event) {
+//     // Update cursor position
+//     gsap.to(cursor, {
+//         x: event.clientX,
+//         y: event.clientY
+//     });
+// });
 
 
 

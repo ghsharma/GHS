@@ -1,0 +1,159 @@
+@font-face {
+    font-family: head;
+    src: url(/311b7f2775e42105e53e.ttf);
+}
+
+@font-face {
+    font-family: tail;
+    src: url(/d77b39f40383b63d32e3.ttf);
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: tail;
+}
+
+html,
+body {
+    scrollbar-width: none;
+    cursor: none;
+    height: 100%;
+    width: 100%;
+    color: white;
+    background-color: rgb(17, 17, 17);
+}
+
+
+#background {
+    z-index: -10;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
+    background-size: 400% 400%;
+    transition: background-position 2s ease-out;
+    /* overflow: hidden; */
+}
+
+
+#cursor {
+    height: 1vw;
+    width: 1vw;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(0%, 0%);
+}
+
+
+
+#sliderpage {
+    gap: 10vh;
+    /* position: relative; */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 150vh;
+    font-family: tail;
+}
+
+.cards {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80vh;
+    background-position: center;
+    background-size: cover;
+    color: black;
+}
+
+#card-one {
+    top: 130%;
+    background-image: url("/media/parapop.jpg");
+    background-size: cover;
+}
+
+#card-one:hover {
+    filter: blur(1px);
+
+}
+
+
+.cardInfo {
+    padding: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projectInfo {
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    height: inherit;
+}
+
+/* .projectImg {
+    height: 75vh;
+    width: 90vw;
+    border: 2px solid blue;
+    overflow: hidden;
+}
+
+.projectImg img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+} */
+
+#card-two {
+    top: 230%;
+    background-image: url("/media/two.png");
+}
+
+#card-three {
+    top: 250%;
+    background-image: url("/media/three.png");
+}
+
+.text {
+    position: absolute;
+    width: 100%;
+    top: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-img {
+    width: 5vw;
+    height: 5vw;
+    /* background-color: #fff; */
+    background-image: url(Blue\ Modern\ G\ Letter\ Technology\ Logo\ Design\ \(4\).png);
+    background-size: cover;
+    background-position: center;
+}
+
+.text h1 {
+    font-size: 10vw;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.text h2 {
+    font-size: 1.5vw;
+    color: rgb(126, 126, 126);
+    text-align: center;
+}
