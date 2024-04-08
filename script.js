@@ -288,11 +288,12 @@ function cursorEffect() {
     var dp = document.querySelector("#dp-img");
     var circle = document.querySelector("#learncircle , #projectcircle");
     var cursor = document.querySelector("#cursor");
+    var cards = document.querySelectorAll(".card");
 
     document.addEventListener("mousemove", function (event) {
         gsap.to(cursor, {
-            x: event.clientX,
-            y: event.clientY
+            x: event.clientX + 10,
+            y: event.clientY + 10
         });
     });
 
@@ -337,22 +338,8 @@ function cursorEffect() {
         });
     });
 
-
-
 }
 cursorEffect();
-// // Select all video and image elements
-// var mediaElements = document.querySelectorAll("video, img");
-
-// // Add event listener for mousemove on the document
-// document.addEventListener("mousemove", function (event) {
-//     // Update cursor position
-//     gsap.to(cursor, {
-//         x: event.clientX,
-//         y: event.clientY
-//     });
-// });
-
 
 
 function backgroundEffect() {
