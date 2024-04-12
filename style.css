@@ -53,6 +53,7 @@ a {
 
 
 * {
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -855,10 +856,14 @@ input:checked+label .description {
 }
 
 #page5 h2 {
+    margin-bottom: 20px;
+}
+
+#page5 h2 span {
     font-size: 4rem;
     text-transform: uppercase;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .page5-container {
@@ -944,9 +949,6 @@ input:checked+label .description {
 }
 
 .eyes {
-    /* margin-top: 20px; */
-    /* margin-bottom: 20px; */
-    /* Add margin to create space between eyes and socials */
     display: flex;
     justify-content: center;
 }
@@ -1228,6 +1230,10 @@ input:checked+label .description {
 /* For screens smaller than 600px (typical phone screens) */
 @media only screen and (max-width: 600px) {
 
+    #loader h1 {
+        font-size: 1.8rem;
+    }
+
     #logo {
         font-size: 2rem;
     }
@@ -1239,36 +1245,68 @@ input:checked+label .description {
     .hamburger {
         display: block;
         margin-right: 10px;
+        cursor: pointer;
     }
 
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: rgb(255, 255, 255);
+        margin: 5px 0;
+        transition: 0.4s;
     }
 
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
+    }
 
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 
 
-    .nav-allbtns {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        gap: 0;
+    #nav-allbtns button {
+        font-size: 1.5rem;
+    }
+
+
+    #navigate {
+        justify-content: center;
+        margin-left: 0vw;
+        margin-top: 100px;
+        display: flex;
         flex-direction: column;
-        background-color: transparent;
-        /* Change background color to transparent */
+    }
+
+    #navigate button {
+        font-size: 3rem;
+        margin: 50px;
+        gap: 100px;
+    }
+
+    #nav-allbtns {
+        height: 85vh;
         width: 100%;
-        text-align: end;
+        left: -100%;
+        top: 60px;
+        z-index: 10;
+        position: fixed;
+        flex-direction: column;
+        color: #ffffff;
+        background-color: rgb(0, 0, 0);
         transition: 0.3s;
     }
 
-    .nav-allbtns.active {
+
+
+    #nav-allbtns.active {
         left: 0;
-        background-color: white;
-        /* Set background color when active */
+        background-color: rgb(0, 0, 0);
+
     }
 
     #freelance {
@@ -1290,17 +1328,17 @@ input:checked+label .description {
 
     #heroHead h1 {
         font-size: 3.4rem;
-        padding: 15px
+        padding: 15px 0px;
     }
 
     #heroPara #p1 {
-        font-size: .8rem;
+        font-size: .51rem;
         margin-left: -20vw;
     }
 
     #heroPara #p2 {
-        font-size: .8rem;
-        margin-left: -60vw;
+        font-size: .7rem;
+        margin-left: -70vw;
     }
 
     #down {
@@ -1345,26 +1383,31 @@ input:checked+label .description {
 
     #projectcircle {
         width: 15vh;
-        margin-top: 5vh;
+        margin-top: 10vh;
         margin-bottom: 5vh;
     }
 
     #page3-top {
-        margin: 0px 0px;
         margin-bottom: 5vh;
         display: flex;
         flex-direction: column-reverse;
     }
 
-    #page3-top h2 {
-        margin-left: -20vw;
-        font-size: 1.5rem;
-        padding: none;
-        margin: 0px 0px;
+    #page3-top h2 span {
+        display: block;
+        font-family: tail;
+        margin-left: -4vw;
+        margin-bottom: -4vh;
+        font-size: 1.6rem;
+        font-weight: lighter;
+    }
 
+    #span3-1 {
+        margin-left: 0rem;
     }
 
     .container {
+        margin: 2px;
         height: 600px;
         display: flex;
         flex-direction: column;
@@ -1372,15 +1415,16 @@ input:checked+label .description {
     }
 
     .card {
-        width: 750px;
+        width: 390px;
         height: 200px;
         margin: 10px 10px;
 
     }
 
     .card>.row>.description>.des_data {
-        height: 110px;
-        width: 80vw;
+        font-size: .8rem;
+        height: 90px;
+        width: 85vw;
         margin-bottom: 5px;
         background-color: rgba(0, 0, 0, 0.877);
         padding: 5px 40px;
@@ -1403,8 +1447,8 @@ input:checked+label .description {
     }
 
     input:checked+label {
-        /* width: 750px; */
-        height: 800px;
+        width: 400px;
+        height: 400px;
     }
 
     input:checked+label .description {
@@ -1413,15 +1457,26 @@ input:checked+label .description {
     }
 
     #page5-content h2 {
-        font-size: 3rem;
+        text-align: center;
+        align-items: center;
+        font-size: 2.5rem;
     }
+
+
+    #page5 h2 span {
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 50px;
+    }
+
 
     #page5-content {
         /* min-height: 100vh; */
         width: 100%;
         position: relative;
         z-index: 9;
-        padding: 140px 70px;
+        padding: 100px 10px;
         font-family: tail;
     }
 
@@ -1430,9 +1485,9 @@ input:checked+label .description {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-size: .8rem;
+        font-size: .6rem;
         font-weight: lighter;
-        height: 10vh;
+        height: 8vh;
         /* padding: 20px; */
         border-top: 1px solid white;
     }
@@ -1453,7 +1508,7 @@ input:checked+label .description {
     }
 
     #connectbox h1 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     #socials {
@@ -1493,27 +1548,29 @@ input:checked+label .description {
     }
 
     .eye {
-        width: 150px;
-        height: 150px;
+        margin: 5px;
+        width: 200px;
+        height: 100px;
         background: #fff;
-        margin: 20px;
         border-radius: 50%;
         position: relative;
         overflow: hidden;
         animation: blink 3s infinite;
     }
 
-    .ball {
-        width: 40px;
-        height: 40px;
-        background: #000;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        border: 10px solid #6d6875;
+
+    #socials {
+        width: 100%;
     }
+
+    .social-div h1 {
+        font-size: 1rem;
+    }
+
+    .social-div {
+        height: 20px;
+    }
+
 
 
 

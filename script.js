@@ -202,6 +202,54 @@ function page3() {
 }
 page3()
 
+function page5() {
+
+    var page3 = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#page5",
+            scroller: "#main",
+            duration: 10,
+            stagger: 2,
+            start: "top 70%",
+            end: "top 0%",
+            scrub: 1 // Adjust scrubbing speed if needed
+        }
+    })
+
+    page3.from("#certi_head span", {
+        x: -100,
+        duration: 100,
+        opacity: 0,
+        stagger: 5,
+        ease: "power1.out",
+
+    });
+
+    page3.to("#certi_head span", {
+        duration: 1,
+        opacity: 1,
+        stagger: 5,
+
+    });
+
+    page3.from(".page5-container", {
+        y: -120,
+        duration: 100,
+        opacity: 0,
+        stagger: 5,
+        ease: "power1.out",
+
+    });
+
+    page3.to(".page5-container", {
+        duration: 1,
+        opacity: 1,
+        stagger: 5,
+        ease: "power1.out",
+
+    });
+} page5()
+
 function page6() {
     var page6 = gsap.timeline({
         scrollTrigger: {
@@ -229,27 +277,28 @@ function page6() {
 }
 page6()
 
-var box = document.querySelectorAll(".page5-container")
-box.forEach(function (elem) {
-    elem.addEventListener("mouseenter", function () {
-        var att = elem.getAttribute("data-image")
-        cursor.style.width = "450px"
-        cursor.style.height = "300px"
-        cursor.style.borderRadius = "0"
-        cursor.style.backgroundImage = `url(${att})`
+function certificates() {
+
+    var box = document.querySelectorAll(".page5-container")
+    box.forEach(function (elem) {
+        elem.addEventListener("mouseenter", function () {
+            var att = elem.getAttribute("data-image")
+            cursor.style.width = "450px"
+            cursor.style.height = "300px"
+            cursor.style.borderRadius = "0"
+            cursor.style.backgroundImage = `url(${att})`
+        })
+        elem.addEventListener("mouseleave", function () {
+            elem.style.backgroundColor = "transparent"
+            cursor.style.width = "10px"
+            cursor.style.height = "10px"
+            cursor.style.borderRadius = "50%"
+            cursor.style.backgroundImage = `none`
+        })
+
     })
-    elem.addEventListener("mouseleave", function () {
-        elem.style.backgroundColor = "transparent"
-        cursor.style.width = "10px"
-        cursor.style.height = "10px"
-        cursor.style.borderRadius = "50%"
-        cursor.style.backgroundImage = `none`
-    })
-
-})
-
-
-
+}
+certificates()
 
 
 function animationsGSAP() {
@@ -279,8 +328,6 @@ function animationsGSAP() {
 
 }
 animationsGSAP()
-
-
 
 function cursorEffect() {
     var main = document.querySelector("#main");
@@ -354,103 +401,79 @@ function backgroundEffect() {
 }
 backgroundEffect();
 
+function eyes() {
 
-let Ball = document.getElementsByClassName("ball");
-document.onmousemove = function () {
-    //get innerWidth,innerheight for browser
+    let Ball = document.getElementsByClassName("ball");
+    document.onmousemove = function () {
+        //get innerWidth,innerheight for browser
 
-    //get horizontal coordinate of the onmousemove
-    let x = (event.clientX * 100) / window.innerWidth + "%";
+        //get horizontal coordinate of the onmousemove
+        let x = (event.clientX * 100) / window.innerWidth + "%";
 
-    //get the verticle coordinate of onmousemove
-    let y = (event.clientY * 100) / window.innerHeight + "%";
+        //get the verticle coordinate of onmousemove
+        let y = (event.clientY * 100) / window.innerHeight + "%";
 
-    for (let i = 0; i < 2; i++) {
-        Ball[i].style.left = x;
-        Ball[i].style.top = y;
-        Ball[i].style.transform = "translate(-" + x + ", -" + y + ")";
-    }
-};
-
-const hamburger = document.querySelector(".hamburger");
-const navmenu = document.querySelector("#nav-allbtns");
-
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navmenu.classList.toggle("active");
-})
-
-document.querySelectorAll(".nav-btns").forEach(n => n.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navmenu.classList.remove("active");
-}))
+        for (let i = 0; i < 2; i++) {
+            Ball[i].style.left = x;
+            Ball[i].style.top = y;
+            Ball[i].style.transform = "translate(-" + x + ", -" + y + ")";
+        }
+    };
 
 
-var trans = gsap.timeline({
-    scrollTrigger: {
-        trigger: "#sliderpage",
-        scroller: "#main",
-        start: "38% 50%",
-        end: "100% 50%",
-        scrub: 2,
-        pin: true
-    }
-});
-trans
-    .to(".text", {
-        top: "-7%",
-    }, 'a')
-    .to("#card-one", {
-        top: "35%",
-    }, 'a')
-    .to("#card-two", {
-        top: "130%"
-    }, 'a')
-    .to("#card-two", {
-        top: "42%"
-    }, 'b')
-    .to("#card-one", {
-        width: "65%",
-        height: "65vh"
-    }, 'b')
-    .to("#card-three", {
-        top: "130%"
-    }, 'b')
-    .to("#card-three", {
-        top: "50%"
-    }, 'c')
-    .to("#card-two", {
-        width: "70%",
-        height: "70vh"
-    }, 'c')
+}
+eyes()
+
+function hamburger() {
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const navmenu = document.querySelector("#nav-allbtns");
+
+        hamburger.addEventListener("click", function () {
+            hamburger.classList.toggle("active");
+            navmenu.classList.toggle("active");
+        });
+
+        navmenu.addEventListener("click", function () {
+            hamburger.classList.remove("active");
+            navmenu.classList.remove("active");
+        });
+    });
+
+}
+hamburger()
 
 
-var tl = gsap.timeline()
-tl.from("#loader h1", {
-    y: -40,
-    opacity: 0,
-    duration: .5,
-    stagger: 0.2,
-    delay: .3,
-})
-
-tl.to(".faders", {
-    opacity: 0.2,
-    y: -40,
-})
-
-tl.to("#loader", {
-    y: "-100%",
-    delay: .5,
-    display: "none"
-})
-
-tl.to("#counter", {
-    delay: 1.5,
-})
 
 
 function startLoader() {
+
+    var tl = gsap.timeline()
+    tl.from("#loader h1", {
+        y: -40,
+        opacity: 0,
+        duration: .5,
+        stagger: 0.2,
+        delay: .3,
+    })
+
+    tl.to(".faders", {
+        opacity: 0.2,
+        y: -40,
+    })
+
+    tl.to("#loader", {
+        y: "-100%",
+        delay: .5,
+        display: "none"
+    })
+
+    tl.to("#counter", {
+        delay: 1.5,
+    })
+
+
     let countElement = document.querySelector("#counter");
     let currValue = 0;
 
