@@ -46,8 +46,6 @@ function implementingGSAP() {
 implementingGSAP();
 
 
-
-
 function page1() {
     var tl = gsap.timeline({
         scrollTrigger: {
@@ -204,19 +202,19 @@ page3()
 
 function page5() {
 
-    var page3 = gsap.timeline({
+    var page5 = gsap.timeline({
         scrollTrigger: {
             trigger: "#page5",
             scroller: "#main",
             duration: 10,
             stagger: 2,
-            start: "top 70%",
+            start: "top 80%",
             end: "top 0%",
             scrub: 1 // Adjust scrubbing speed if needed
         }
     })
 
-    page3.from("#certi_head span", {
+    page5.from("#certi_head span", {
         x: -100,
         duration: 100,
         opacity: 0,
@@ -225,23 +223,23 @@ function page5() {
 
     });
 
-    page3.to("#certi_head span", {
+    page5.to("#certi_head span", {
         duration: 1,
         opacity: 1,
-        stagger: 5,
+        stagger: 50,
 
     });
 
-    page3.from(".page5-container", {
+    page5.from(".page5-container", {
         y: -120,
         duration: 100,
         opacity: 0,
-        stagger: 5,
+        stagger: 100,
         ease: "power1.out",
 
     });
 
-    page3.to(".page5-container", {
+    page5.to(".page5-container", {
         duration: 1,
         opacity: 1,
         stagger: 5,
@@ -443,8 +441,6 @@ function hamburger() {
 
 }
 hamburger()
-
-
 
 
 function startLoader() {

@@ -185,7 +185,7 @@ nav button:hover {
     background-color: transparent;
     font-size: 1rem;
     margin: 5px;
-    padding: 5px;
+    padding: 20px;
 }
 
 .nav-btns::after {
@@ -358,7 +358,7 @@ nav button:hover {
 
 #dp img {
     height: 80vh;
-    border-radius: 30px;
+    border-radius: 70px;
     padding: 20px;
 }
 
@@ -438,7 +438,7 @@ nav button:hover {
 .marquee {
     /* margin-bottom: 50%; */
     position: absolute;
-    top: 90%;
+    top: 95%;
     left: -10%;
     transform: translateY(-50%);
     white-space: nowrap;
@@ -448,9 +448,9 @@ nav button:hover {
 
 .marquee span {
     font-family: tail;
-    font-size: 9rem;
+    font-size: 11rem;
     display: inline-block;
-    animation: marquee 60s linear infinite;
+    animation: marquee 90s linear infinite;
 }
 
 @keyframes marquee {
@@ -996,6 +996,7 @@ input:checked+label .description {
 
     #main {
         overflow: hidden;
+
     }
 
     #freelance {
@@ -1229,6 +1230,10 @@ input:checked+label .description {
 
 /* For screens smaller than 600px (typical phone screens) */
 @media only screen and (max-width: 600px) {
+    #cursor {
+        height: 0vw;
+        width: 0vw;
+    }
 
     #loader h1 {
         font-size: 1.8rem;
@@ -1367,12 +1372,12 @@ input:checked+label .description {
     #dp img {
         height: 35vh;
         margin-left: -3vh;
-        border-radius: 30px;
+        border-radius: 70px;
         padding: 20px;
     }
 
     .marquee span {
-        margin-top: 6vh;
+        margin-top: 2vh;
         font-size: 7rem;
     }
 
