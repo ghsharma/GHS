@@ -98,7 +98,7 @@ h1 {
     background-image: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
     background-size: 400% 400%;
     transition: background-position 2s ease-out;
-    /* overflow: hidden; */
+
 }
 
 #navigate {
@@ -123,14 +123,13 @@ nav button {
 
 #freelance {
     margin-right: 1.2%;
-    min-width: 20vw;
+    /* min-width: 20vw; */
     border-radius: 20px;
     height: 5vh;
     font-size: .8rem;
-    padding: 0 10px;
-    border: .5px solid rgb(255, 255, 255);
+    padding: 0 20px;
+    border: .05px solid rgb(255, 255, 255);
     background-color: transparent;
-    border: 2px solid currentColor;
     border-radius: 3rem;
     overflow: hidden;
     transition: 0.2s transform ease-in-out;
@@ -160,7 +159,7 @@ nav button {
 }
 
 #freelance:hover {
-    border: 1px solid transparent;
+    border: .1px solid transparent;
     color: #000000;
     transform: scale(1.05);
     will-change: transform;
@@ -183,7 +182,7 @@ nav button:hover {
 
     border: none;
     background-color: transparent;
-    font-size: 1rem;
+    font-size: .9rem;
     margin: 5px;
     padding: 20px;
 }
@@ -227,7 +226,7 @@ nav button:hover {
 #atPage {
     padding: 5% 2%;
     margin-left: 1.8%;
-    font-size: 1rem;
+    font-size: .9rem;
     font-family: head;
     font-weight: lighter;
 }
@@ -237,7 +236,7 @@ nav button:hover {
 }
 
 #heroHead h1 {
-    font-family: tail;
+    font-family: head;
     margin-bottom: -3.8rem;
     text-align: center;
     font-size: 6rem;
@@ -369,7 +368,7 @@ nav button:hover {
 }
 
 #learncircle {
-    width: 25vh;
+    width: 17vh;
     font-family: tail;
     text-transform: uppercase;
     font-size: 3rem;
@@ -474,7 +473,7 @@ nav button:hover {
 
 #page3-top h2 span {
     font-family: tail;
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-weight: lighter;
 }
 
@@ -605,7 +604,6 @@ input:checked+label .description {
     background-image: url('/media/spotify.jpg');
 }
 
-/* ---------------------------------trial end-------------------- */
 
 #page3-main {
     margin: 40px;
@@ -655,7 +653,8 @@ input:checked+label .description {
 }
 
 #projectcircle {
-    width: 25vh;
+
+    width: 17vh;
     font-family: tail;
     text-transform: uppercase;
     font-size: 3rem;
@@ -706,7 +705,7 @@ input:checked+label .description {
 
 #projecttext {
     padding: 10px;
-    font-size: .7rem;
+    font-size: .8rem;
     text-align: center;
     font-size: bolder;
     font-family: tail;
@@ -898,20 +897,22 @@ input:checked+label .description {
 
 #connectbox {
     border-radius: 30px;
-    background-color: rgba(22, 21, 21, 0.718);
+    background-color: rgba(12, 12, 12, 0.718);
     width: 60%;
     color: rgb(255, 255, 255);
-    margin-top: 10%;
+    margin-top: 15vh;
+    margin-bottom: 20px;
     padding: 50px;
     position: relative;
     box-sizing: border-box;
     text-align: center;
-    border: 1px solid white;
+    border: .1px solid rgba(255, 255, 255, 0.248);
 }
 
 #connectbox h2 {
     font-family: head;
     font-size: 1rem;
+    font-weight: lighter;
 }
 
 #connectbox h1 {
@@ -919,8 +920,7 @@ input:checked+label .description {
 }
 
 #socials {
-    width: 90%;
-    /* Add margin to create space between socials and eyes */
+    width: 95%;
     display: flex;
     justify-content: space-between;
 }
@@ -936,8 +936,7 @@ input:checked+label .description {
 }
 
 .social-div {
-    margin-top: 2%;
-    margin-bottom: 3%;
+    margin-top: 10px;
     height: 50px;
     overflow: hidden;
     position: relative;
@@ -987,6 +986,21 @@ input:checked+label .description {
     95% {
         transform: scale(1, 1);
     }
+}
+
+
+h4 {
+    text-transform: uppercase;
+    font-family: tail;
+    font-size: .8rem;
+    font-weight: lighter;
+}
+
+#message {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* For screens smaller than 768px (typical iPad portrait mode) */
@@ -1574,6 +1588,20 @@ input:checked+label .description {
 
     .social-div {
         height: 20px;
+    }
+
+    h4 {
+        text-transform: uppercase;
+        font-family: tail;
+        font-size: .5rem;
+        font-weight: lighter;
+    }
+
+    #message {
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
 

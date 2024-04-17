@@ -1,3 +1,50 @@
+function implementingGSAP() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const locoScroll = new LocomotiveScroll({
+        el: document.querySelector("#main"),
+        smooth: true,
+
+        // for tablet smooth
+        tablet: { smooth: true },
+
+        // for mobile
+        smartphone: { smooth: true }
+    });
+    locoScroll.on("scroll", ScrollTrigger.update);
+
+    ScrollTrigger.scrollerProxy("#main", {
+        scrollTop(value) {
+            return arguments.length
+                ? locoScroll.scrollTo(value, 0, 0)
+                : locoScroll.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+            return {
+                top: 0,
+                left: 0,
+                width: window.innerWidth,
+                height: window.innerHeight
+            };
+        }
+
+        // follwoing line is not required to work pinning on touch screen
+
+        /* pinType: document.querySelector(".smooth-scroll").style.transform
+          ? "transform"
+          : "fixed"*/
+    });
+
+
+
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+    ScrollTrigger.refresh();
+
+}
+implementingGSAP();
+
+
 function cursorEffect() {
     var main = document.querySelector("#main");
     var btn = document.querySelector("#freelance");
@@ -30,18 +77,6 @@ function cursorEffect() {
 cursorEffect();
 
 
-// anotherpage.js
-
-// Function to navigate back to the main page
-function navigateBackToMainPage() {
-    // Save the fact that the loader has been displayed once
-    sessionStorage.setItem('loaderDisplayed', true);
-    // Navigate back to the main page
-    // Example: window.location.href = 'index.html';
-}
-
-
-
 function backgroundEffect() {
     document.addEventListener("mousemove", function (event) {
         const x = (window.innerWidth - event.clientX) / window.innerWidth * 100;
@@ -53,43 +88,3 @@ function backgroundEffect() {
 
 }
 backgroundEffect();
-
-
-
-var tl = gsap.timeline({
-    scrollTrigger: {
-        trigger: "#main",
-        // markers:true,
-        start: "38% 50%",
-        end: "100% 50%",
-        scrub: 2,
-        pin: true
-    }
-});
-tl
-    .to(".text", {
-        top: "-7%",
-    }, 'a')
-    .to("#card-one", {
-        top: "35%",
-    }, 'a')
-    .to("#card-two", {
-        top: "130%"
-    }, 'a')
-    .to("#card-two", {
-        top: "42%"
-    }, 'b')
-    .to("#card-one", {
-        width: "65%",
-        height: "65vh"
-    }, 'b')
-    .to("#card-three", {
-        top: "130%"
-    }, 'b')
-    .to("#card-three", {
-        top: "50%"
-    }, 'c')
-    .to("#card-two", {
-        width: "70%",
-        height: "70vh"
-    }, 'c')

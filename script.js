@@ -337,8 +337,8 @@ function cursorEffect() {
 
     document.addEventListener("mousemove", function (event) {
         gsap.to(cursor, {
-            x: event.clientX + 10,
-            y: event.clientY + 10
+            x: event.clientX + 20 + "px",
+            y: event.clientY + 20 + "px"
         });
     });
 
