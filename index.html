@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DevHarshu</title>
+        <title>G.H.SHARMA</title>
+        <link rel="icon" type="image/png" href="./mediA/ghsFAVICON.png">
         <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
 
@@ -17,16 +18,24 @@
             <div id="counter"> </div>
         </div>
         <div id="cursor"></div>
+        <div id="transition"></div>
+        <div id="landscapeMessage">Please rotate your phone and relaod</div>
+            
 
         <div id="main">
             <div id="background">
+                <video id="videoBG" autoplay muted loop>
+                    <source src="./media/mbBG (1).mp4" type="video/mp4">
+                    <!-- Add additional video sources here for different formats -->
+                </video>
+
                 <div id="page1">
                     <div id="page1-content">
                         <nav id="navbar">
-                                <button id="logo">G.H.SHARMA</button>
+                           <button id="logo">G.H.SHARMA</button>
                                 <div id="nav-allbtns">
                                     <div id="navigate">
-                                        <a href="/projects/projects.html"><button class="nav-btns" id="about_btn">ABOUT</button></a>
+                                        <a href="./about/about.html"><button class="nav-btns"  id="aboutbtn" >ABOUT</button></a>
                                         <a href="https://drive.google.com/file/d/1RV0jFPbNlU2wwpeZuKxHULXKaXCLsL1B/view?usp=sharing"><button class="nav-btns">RESUME</button></a>
                                     </div>
                                     <button id="freelance">AVAILABLE FOR FREELANCE</button>
@@ -84,7 +93,9 @@
                                         engaging user experiences.</span></p>
                             </div>
                             <div id="dp">
-                                <img id="dp-img" src="./media/dp.jpg" alt>
+                                <div id="img-container-dp">
+                                    <img id="dp-img" src="./media/dp.jpg" alt>
+                                </div>
                                 <div class="marquee">
                                     <span>GOVIND HARSH SHARMA - GOVIND HARSH
                                         SHARMA - GOVIND HARSH SHARMA - GOVIND
@@ -97,13 +108,13 @@
                                     </div>
                                 </div>
 
-                          
-                                <div id="learnbox">
+                                <a href="/about/about.html" id="learnbox"><div>
                                     <div id="learncircle">
                                         <div id="learntext"> Learn
-                                            <span>More</span></div>
+                                            <span>More ↗</span></div>
                                     </div>
-                                </div>
+                                </div></a>
+                                
                             </div>
                         </div>
                     </div>
@@ -120,16 +131,15 @@
 
                             <div id="page3-top">
                                 <div id="projectbox">
-                                    <a href="">
+                                    <a href="https://github.com/ghsharma?tab=repositories">
                                         <div id="projectcircle">
-                                            
                                             <div id="projecttext"> Know
-                                                <span>More</span></div>
+                                                <span>More ↗</span></div>
                                          </div>
                                         </a>
                                 </div>  
                                 <div id="page3-head">
-                                    <h2><span id="span3-1">Here are some selected projects that showcase </span><br>
+                                    <h2><span>Here are some selected projects that showcase </span><br>
                                     <span>my passion for creating memorable web experience</span><br>
                                     <span>and products.</span></h2>
                                 </div>
@@ -276,12 +286,10 @@
                              
                             </div>
                             <div id="message">
-                                <div>
-                                    <h4>feel free to connect with me on social . </h4>
-                                </div>
-                                <div>
+                                
+                                    <h4> feel free to connect with me on social . </h4>
                                     <h4> By GHS |  ©2024 All rights reserved.</h4>
-                                </div>
+                               
                             </div>
                             </div>
                     </div>

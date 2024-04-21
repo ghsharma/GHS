@@ -45,7 +45,6 @@ function implementingGSAP() {
 }
 implementingGSAP();
 
-
 function page1() {
     var tl = gsap.timeline({
         scrollTrigger: {
@@ -162,17 +161,6 @@ function page3() {
         }
     })
 
-    page3.from("#line3", {
-        x: "-120%",
-        scrollTrigger: {
-            trigger: "#page4",
-            scroller: "#main",
-            start: "top 90%",
-            end: "top   60%",
-            scrub: 1 // Adjust scrubbing speed if needed
-        }
-    })
-
     page3.from("#line4", {
         x: "-120%",
         scrollTrigger: {
@@ -285,6 +273,8 @@ function certificates() {
             cursor.style.height = "300px"
             cursor.style.borderRadius = "0"
             cursor.style.backgroundImage = `url(${att})`
+            cursor.style.mixBlendMode = "normal";
+
         })
         elem.addEventListener("mouseleave", function () {
             elem.style.backgroundColor = "transparent"
@@ -292,6 +282,8 @@ function certificates() {
             cursor.style.height = "10px"
             cursor.style.borderRadius = "50%"
             cursor.style.backgroundImage = `none`
+            cursor.style.mixBlendMode = "difference";
+
         })
 
     })
@@ -331,7 +323,8 @@ function cursorEffect() {
     var main = document.querySelector("#main");
     var btn = document.querySelector("#freelance");
     var dp = document.querySelector("#dp-img");
-    var circle = document.querySelector("#learncircle , #projectcircle");
+    var circle = document.querySelector("#learncircle");
+    var circle2 = document.querySelector("#projectcircle");
     var cursor = document.querySelector("#cursor");
     var cards = document.querySelectorAll(".card");
 
@@ -382,22 +375,35 @@ function cursorEffect() {
             opacity: 1
         });
     });
+    circle2.addEventListener("mouseenter", function () {
+        gsap.to(cursor, {
+            scale: 0,
+            opacity: 0
+        });
+    });
+
+    circle2.addEventListener("mouseleave", function () {
+        gsap.to(cursor, {
+            scale: 1,
+            opacity: 1
+        });
+    });
 
 }
 cursorEffect();
 
 
-function backgroundEffect() {
-    document.addEventListener("mousemove", function (event) {
-        const x = (window.innerWidth - event.clientX) / window.innerWidth * 100;
-        const y = (window.innerHeight - event.clientY) / window.innerHeight * 100;
-        const backgroundPosition = `${x}% ${y}%`;
-        document.getElementById("background").style.backgroundPosition = backgroundPosition;
-    });
+// function backgroundEffect() {
+//     document.addEventListener("mousemove", function (event) {
+//         const x = (window.innerWidth - event.clientX) / window.innerWidth * 100;
+//         const y = (window.innerHeight - event.clientY) / window.innerHeight * 100;
+//         const backgroundPosition = `${x}% ${y}%`;
+//         document.getElementById("background").style.backgroundPosition = backgroundPosition;
+//     });
 
 
-}
-backgroundEffect();
+// }
+// backgroundEffect();
 
 function eyes() {
 
@@ -493,3 +499,59 @@ function startLoader() {
     updateCounter();
 }
 startLoader();
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+
+// function delay(n) {
+//     n = n || 2000;
+//     return new Promise((done) => {
+//         setTimeout(() => {
+//             done();
+//         }, n);
+//     });
+// }
+
+// function transition() {
+//     let tl = gsap.timeline();
+//     tl.to("#transition", {
+//         duration: 1,
+//         scaleY: 1,
+//         transformOrigin: "bottom",
+//         ease: "power4.inOut",
+//     });
+//     tl.to("#transition", {
+//         duration: 1,
+//         scaleY: 0,
+//         transformOrigin: "top",
+//         ease: "power4.inOut",
+//         delay: 0.2,
+//     });
+// }
+
+// function contentAnimation() {
+//     let tl = gsap.timeline();
+//     tl.from(".animate-this", {
+//         duration: 1,
+//         y: 30,
+//         opacity: 0,
+//         stagger: 0.4, // Corrected property name
+//         delay: 0.2,
+//     });
+// }
+
+// $(function () {
+//     barba.init({
+//         sync: true,
+//         transitions: [
+//             {
+//                 async leave(data) {
+//                     const done = this.async();
+//                     transition();
+//                     await delay(1000);
+//                     done();
+//                 }
+//             }
+//         ]
+//     })
+// });

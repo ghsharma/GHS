@@ -8,9 +8,23 @@
     src: url(./d77b39f40383b63d32e3.ttf);
 }
 
-#main {
-    /* overflow: hidden; */
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    user-select: none;
+    scroll-snap-points-y: repeat(1000%);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
 
 a {
     cursor: none;
@@ -72,7 +86,22 @@ a {
     transform: translate(0%, 0%);
     background-position: center;
     background-size: cover;
+    mix-blend-mode: difference;
 }
+
+/* 
+#transition {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: white;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+} */
 
 button {
     cursor: none;
@@ -86,19 +115,30 @@ body {
     height: 100%;
     width: 100%;
     color: white;
-    background-color: rgb(28, 28, 28);
+    background-color: rgb(20, 20, 20);
 }
 
 h1 {
     font-family: head;
 }
 
-#background {
+/* #background {
     z-index: -10;
     background-image: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
     background-size: 400% 400%;
     transition: background-position 2s ease-out;
 
+} */
+
+#videoBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
 }
 
 #navigate {
@@ -123,7 +163,6 @@ nav button {
 
 #freelance {
     margin-right: 1.2%;
-    /* min-width: 20vw; */
     border-radius: 20px;
     height: 5vh;
     font-size: .8rem;
@@ -187,21 +226,7 @@ nav button:hover {
     padding: 20px;
 }
 
-.nav-btns::after {
-    content: " ";
-    position: absolute;
-    background-color: white;
-    height: 1px;
-    width: 0;
-    left: 0;
-    bottom: -.1px;
-    padding: 0 0px;
-    transition: .3s;
-}
 
-.nav-btns:hover::after {
-    width: 100%;
-}
 
 #nav-allbtns {
     width: 100%;
@@ -209,6 +234,7 @@ nav button:hover {
     align-items: center;
     justify-content: space-between;
 }
+
 
 .hamburger {
     display: none;
@@ -845,6 +871,7 @@ input:checked+label .description {
     transform: translate(0%) rotate(0deg);
 }
 
+
 #page5-content {
     /* min-height: 100vh; */
     width: 100%;
@@ -1003,14 +1030,77 @@ h4 {
     justify-content: space-between;
 }
 
+#landscapeOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
+    z-index: 9998;
+    /* Ensure the overlay is behind the message */
+}
+
+#landscapeMessage {
+    display: none;
+    /* Initially hide the message */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 9999;
+}
+
+@media only screen and (max-device-width: 767px) and (orientation: landscape) {
+
+    /* Hide the main content, cursor, and loader */
+    #main,
+    #cursor,
+    #loader {
+        display: none;
+    }
+
+    /* Show the landscape message */
+    #landscapeMessage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        /* Ensure it's fixed on the screen */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-transform: uppercase;
+        font-family: tail;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        /* You can add additional styling as needed */
+    }
+}
+
+
+
 /* For screens smaller than 768px (typical iPad portrait mode) */
 @media (min-width: 769px) and (max-width: 1024px) {
 
     /* Adjust styles for iPads */
 
+
     #main {
         overflow: hidden;
+        cursor: none;
+    }
 
+    #loader {
+        font-family: tail;
     }
 
     #freelance {
@@ -1057,8 +1147,9 @@ h4 {
     }
 
     #dp img {
+        align-items: center;
         height: 45vh;
-        border-radius: 30px;
+        border-radius: 100px;
         padding: 20px;
     }
 
@@ -1083,8 +1174,8 @@ h4 {
         flex-direction: column-reverse;
     }
 
-    #page3-head p {
-        font-size: 1.5rem;
+    #page3-head h2 span {
+        font-size: 1.8rem;
     }
 
     .container {
@@ -1245,12 +1336,11 @@ h4 {
 /* For screens smaller than 600px (typical phone screens) */
 @media only screen and (max-width: 600px) {
     #cursor {
-        height: 0vw;
-        width: 0vw;
+        display: none;
     }
 
     #loader h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     #logo {
@@ -1303,8 +1393,8 @@ h4 {
 
     #navigate button {
         font-size: 3rem;
-        margin: 50px;
-        gap: 100px;
+        margin: 50px 50px;
+        gap: 90px;
     }
 
     #nav-allbtns {
@@ -1323,6 +1413,7 @@ h4 {
 
 
     #nav-allbtns.active {
+        margin-bottom: 10vh;
         left: 0;
         background-color: rgb(0, 0, 0);
 
@@ -1333,6 +1424,7 @@ h4 {
         border-radius: 20px;
         font-size: .8rem;
         padding: 0 10px;
+        margin-bottom: 2vh;
         border: 1px solid rgb(255, 255, 255);
         background-color: transparent;
     }
@@ -1346,22 +1438,22 @@ h4 {
     }
 
     #heroHead h1 {
-        font-size: 3.4rem;
-        padding: 15px 0px;
+        font-size: 3rem;
+        padding: 20px 0px;
     }
 
     #heroPara #p1 {
-        font-size: .51rem;
+        font-size: .4rem;
         margin-left: -20vw;
     }
 
     #heroPara #p2 {
-        font-size: .7rem;
+        font-size: .6rem;
         margin-left: -70vw;
     }
 
     #down {
-        width: 20vw;
+        min-width: 25vw;
         margin-bottom: 10vh;
     }
 
@@ -1383,9 +1475,14 @@ h4 {
         font-size: 1rem;
     }
 
+    #img-container-dp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     #dp img {
         height: 35vh;
-        margin-left: -3vh;
         border-radius: 70px;
         padding: 20px;
     }
@@ -1478,7 +1575,7 @@ h4 {
     #page5-content h2 {
         text-align: center;
         align-items: center;
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
 
