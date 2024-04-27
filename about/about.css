@@ -116,6 +116,7 @@ nav button {
     margin-right: 1.2%;
     border-radius: 20px;
     height: 5vh;
+    width: 20vw;
     font-size: .8rem;
     padding: 0 20px;
     border: .05px solid rgb(255, 255, 255);
@@ -367,6 +368,7 @@ nav button:hover {
 
 
 #page4-main h2 {
+    font-size: 1.5rem;
     width: 55vw;
     font-weight: lighter;
 }
@@ -528,6 +530,20 @@ h4 {
         justify-content: center;
         height: 50vw;
         width: 70vw;
+    }
+
+    #page4-main h2 {
+        font-size: .7rem;
+        width: 55vw;
+        font-weight: lighter;
+    }
+
+    #page4-main h2 span {
+        font-size: 2.5rem;
+    }
+
+    #page4 {
+        margin-bottom: 10vh;
     }
 
 }
