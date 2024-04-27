@@ -355,3 +355,6 @@ function eyes() {
 
 }
 eyes()
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+

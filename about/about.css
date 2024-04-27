@@ -501,6 +501,10 @@ h4 {
 
 /* For screens smaller than 768px (typical iPad portrait mode) */
 @media (min-width: 769px) and (max-width: 1024px) {
+    #videoBG {
+        display: none;
+    }
+
     #cursor {
         display: none;
     }
@@ -803,6 +807,10 @@ h4 {
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+
+    #videoBG {
+        display: none;
     }
 
 

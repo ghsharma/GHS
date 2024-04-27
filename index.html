@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>G.H.SHARMA</title>
-        <link rel="icon" type="image/png" href="./mediA/ghsFAVICON.png">
+        <link rel="icon" type="image/png" href="./mediA/FAVI.png">
         <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
 
@@ -38,7 +38,7 @@
                                         <a href="./about/about.html"><button class="nav-btns"  id="aboutbtn" >ABOUT</button></a>
                                         <a href="https://drive.google.com/file/d/1RV0jFPbNlU2wwpeZuKxHULXKaXCLsL1B/view?usp=sharing"><button class="nav-btns">RESUME</button></a>
                                     </div>
-                                    <button id="freelance">AVAILABLE FOR FREELANCE</button>
+                                    <a href="mailto:govindharsh42@gmail.com" id="a-free"><button id="freelance">AVAILABLE FOR FREELANCE</button></a>
                                 </div>
                                 <div class="hamburger">
                                     <div class="bar"></div>
@@ -50,6 +50,7 @@
                         
                         <div id="atPage">01//05 - SCROLL ↓
                         </div>
+                                                
                         <div id="heroHead">
                             <h1><span>MULTI-</span></h1>
                             <h1>DISCIPLINARY</h1>
@@ -147,12 +148,13 @@
                             <div class="wrapper">
                                 <div class="container">
                                     <input type="radio" name="slide" id="c1" checked>
-                                    <label for="c1" class="card">
+                                    <label for="c1" class="card" onmouseenter="showText(this)" onmouseleave="hideText(this)">
                                         <div class="row">
                                             <div class="icon">1</div>
                                             <div class="description">
                                                 <div class="des_data">
-                                                    <h4>PARAPOP</h4>
+                                                    <div class="tag"><h4>PARAPOP</h4> <a href="https://parapop.pages.dev/" class="tag-btn">live at ↗</a></div>
+                                                  
                                                     <p>AI-based article summarizing application developed using ReactJS</p>
                                                 </div>
                                             </div>
@@ -164,7 +166,9 @@
                                             <div class="icon">2</div>
                                             <div class="description">
                                                 <div class="des_data">
-                                                    <h4>CURRENCY FLOW</h4>
+                                                  
+                                                    <div class="tag">  <h4>CURRENCY FLOW</h4> <a href="https://github.com/ghsharma/CurrencyFlow" class="tag-btn">live at ↗</a></div>
+
                                                     <p>Real-time, dynamic currency conversion for today or tomorrow.</p>
                                                 </div>
                                             </div>
@@ -176,7 +180,9 @@
                                             <div class="icon">3</div>
                                             <div class="description">
                                                 <div class="des_data">
-                                                    <h4>श्रमिकMANTRA</h4>
+                                                    
+                                                    <div class="tag"><h4>श्रमिकMANTRA</h4> <a href="https://skillserve.pages.dev/" class="tag-btn">live at ↗</a></div>
+
                                                     <p> ReactJS webapp that serves as a platform for booking household services.</p>
                                                 </div>
                                             </div>
@@ -188,8 +194,10 @@
                                             <div class="icon">4</div>
                                             <div class="description">
                                                 <div class="des_data">
-                                                    <h4>SPOTIFY-CLONE</h4>
-                                                    <p>a responsive user interface mirroring Spotify's design for web.</p>
+                                                    
+                                                    <div class="tag"><h4>REJOUICE-UI-CLONE</h4> <a href="https://ghsharma.github.io/Rejouice_clone/" class="tag-btn">live at ↗</a></div>
+
+                                                    <p>responsive UI mirroring REJOUICE's design for web USING GSAP.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -301,7 +309,8 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
             integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script
+            
+            <script
             src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
             integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>

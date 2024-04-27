@@ -42,8 +42,11 @@ function implementingGSAP() {
 
     ScrollTrigger.refresh();
 
+
+
 }
 implementingGSAP();
+
 
 function page1() {
     var tl = gsap.timeline({
@@ -326,7 +329,7 @@ function cursorEffect() {
     var circle = document.querySelector("#learncircle");
     var circle2 = document.querySelector("#projectcircle");
     var cursor = document.querySelector("#cursor");
-    var cards = document.querySelectorAll(".card");
+    var cards = document.querySelector(".card");
 
     document.addEventListener("mousemove", function (event) {
         gsap.to(cursor, {
@@ -361,6 +364,8 @@ function cursorEffect() {
             opacity: 1
         });
     });
+
+
 
     circle.addEventListener("mouseenter", function () {
         gsap.to(cursor, {
@@ -467,7 +472,7 @@ function startLoader() {
 
     tl.to("#loader", {
         y: "-100%",
-        delay: .5,
+        delay: .7,
         display: "none"
     })
 
