@@ -660,21 +660,21 @@ input:checked+label .description {
 }
 
 .card[for="c1"] {
-    background-image: url('/media/parapop.jpg');
+    background-image: url('./media/parapop.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .card[for="c2"] {
-    background-image: url('/media/currencyflow.jpg');
+    background-image: url('./media/currencyflow.jpg');
 }
 
 .card[for="c3"] {
-    background-image: url('/media/shramik\ mantra.jpg');
+    background-image: url('./media/shramik\ mantra.jpg');
 }
 
 .card[for="c4"] {
-    background-image: url('/media/rejouice.jpg');
+    background-image: url('./media/rejouice.jpg');
 }
 
 

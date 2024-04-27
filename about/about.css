@@ -1,11 +1,12 @@
 @font-face {
     font-family: head;
-    src: url(/311b7f2775e42105e53e.ttf);
+    /* src: url(/311b7f2775e42105e53e.ttf); */
+    src: url(../311b7f2775e42105e53e.ttf);
 }
 
 @font-face {
     font-family: tail;
-    src: url(/d77b39f40383b63d32e3.ttf);
+    src: url(../d77b39f40383b63d32e3.ttf);
 }
 
 #main {
