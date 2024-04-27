@@ -312,7 +312,7 @@ nav button:hover {
 
 .line {
     width: 90%;
-    height: 1px;
+    height: .5px;
     margin: 0 auto;
     margin-top: 7%;
     background-color: rgb(255, 255, 255);
