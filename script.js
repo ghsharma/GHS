@@ -397,7 +397,6 @@ function cursorEffect() {
 }
 cursorEffect();
 
-
 // function backgroundEffect() {
 //     document.addEventListener("mousemove", function (event) {
 //         const x = (window.innerWidth - event.clientX) / window.innerWidth * 100;

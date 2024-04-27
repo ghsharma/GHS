@@ -8,6 +8,7 @@
     src: url(./d77b39f40383b63d32e3.ttf);
 }
 
+
 * {
 
     margin: 0;
@@ -1101,7 +1102,7 @@ h4 {
     z-index: 9999;
 }
 
-@media only screen and (max-device-width: 767px) and (orientation: landscape) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
 
     /* Hide the main content, cursor, and loader */
     #main,
@@ -1112,13 +1113,14 @@ h4 {
 
     /* Show the landscape message */
     #landscapeMessage {
+        color: white;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         position: fixed;
         /* Ensure it's fixed on the screen */
-        top: 0;
-        left: 0;
+        top: 50;
+        left: 50;
         width: 100%;
         height: 100%;
         text-transform: uppercase;

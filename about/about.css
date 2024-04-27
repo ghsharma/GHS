@@ -500,6 +500,65 @@ h4 {
     justify-content: space-between;
 }
 
+#landscapeOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
+    z-index: 9998;
+    /* Ensure the overlay is behind the message */
+}
+
+#landscapeMessage {
+    display: none;
+    /* Initially hide the message */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 9999;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+
+    /* Hide the main content, cursor, and loader */
+    #main,
+    #cursor,
+    #loader {
+        display: none;
+    }
+
+    /* Show the landscape message */
+    #landscapeMessage {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        /* Ensure it's fixed on the screen */
+        top: 50;
+        left: 50;
+        width: 100%;
+        height: 100%;
+        text-transform: uppercase;
+        font-family: tail;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        /* You can add additional styling as needed */
+    }
+}
+
+
+
 
 /* For screens smaller than 768px (typical iPad portrait mode) */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -730,11 +789,6 @@ h4 {
 
     #page4 {
         margin-bottom: 10vh;
-    }
-
-    #page6-content {
-        /* margin-top: -90vh; */
-        /* margin-bottom: -60vh; */
     }
 
     #connectbox {
